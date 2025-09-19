@@ -47,6 +47,7 @@ public class MappingConfig implements GraphQLCodegenConfiguration, Combinable<Ma
     private Boolean generateEqualsAndHashCode;
     private Boolean generateToString;
     private Boolean generateImmutableModels;
+    private Boolean useRecordTypes;
     private Boolean generateParameterizedFieldsResolvers;
     private Boolean generateExtensionFieldsResolvers;
     private Boolean generateDataFetchingEnvironmentArgumentInApis;
@@ -158,6 +159,7 @@ public class MappingConfig implements GraphQLCodegenConfiguration, Combinable<Ma
                 GraphQLCodegenConfiguration::getGenerateEqualsAndHashCode);
         generateImmutableModels = getValueOrDefaultToThis(source,
                 GraphQLCodegenConfiguration::getGenerateImmutableModels);
+        useRecordTypes = getValueOrDefaultToThis(source, GraphQLCodegenConfiguration::getUseRecordTypes);
         generateToString = getValueOrDefaultToThis(source, GraphQLCodegenConfiguration::getGenerateToString);
         generateParameterizedFieldsResolvers = getValueOrDefaultToThis(source,
                 GraphQLCodegenConfiguration::getGenerateParameterizedFieldsResolvers);
@@ -495,6 +497,15 @@ public class MappingConfig implements GraphQLCodegenConfiguration, Combinable<Ma
 
     public void setGenerateImmutableModels(Boolean generateImmutableModels) {
         this.generateImmutableModels = generateImmutableModels;
+    }
+
+    @Override
+    public Boolean getUseRecordTypes() {
+        return useRecordTypes;
+    }
+
+    public void setUseRecordTypes(Boolean useRecordTypes) {
+        this.useRecordTypes = useRecordTypes;
     }
 
     @Override

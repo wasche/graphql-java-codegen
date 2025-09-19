@@ -6,11 +6,13 @@ package com.kobylynskyi.graphql.codegen.generators;
 public enum FreeMarkerTemplateType {
 
     TYPE,
+    TYPE_RECORD,
     ENUM,
     UNION,
     REQUEST,
     RESPONSE,
     INTERFACE,
+    INTERFACE_RECORD,
     OPERATIONS,
     PARAMETRIZED_INPUT,
     RESPONSE_PROJECTION,

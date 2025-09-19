@@ -5,6 +5,7 @@ import com.kobylynskyi.graphql.codegen.generators.FreeMarkerTemplateFilesCreator
 import com.kobylynskyi.graphql.codegen.generators.FreeMarkerTemplateType;
 import com.kobylynskyi.graphql.codegen.mapper.DataModelMapperFactory;
 import com.kobylynskyi.graphql.codegen.mapper.TypeDefinitionToDataModelMapper;
+import com.kobylynskyi.graphql.codegen.model.GeneratedLanguage;
 import com.kobylynskyi.graphql.codegen.model.MappingContext;
 import com.kobylynskyi.graphql.codegen.model.definitions.ExtendedObjectTypeDefinition;
 
@@ -43,12 +44,22 @@ public class TypeGenerator implements FilesGenerator {
         }
 
         Map<String, Object> dataModel = typeDefinitionMapper.map(mappingContext, definition);
+        if (mappingContext.getUseRecordTypes()) {
+            if (typeAsInterface) {
+                return FreeMarkerTemplateFilesCreator.create(
+                  mappingContext, FreeMarkerTemplateType.INTERFACE_RECORD, dataModel);
+            }
+
+            return FreeMarkerTemplateFilesCreator.create(
+              mappingContext, FreeMarkerTemplateType.TYPE_RECORD, dataModel);
+        }
+
         if (typeAsInterface) {
             return FreeMarkerTemplateFilesCreator.create(
-                    mappingContext, FreeMarkerTemplateType.INTERFACE, dataModel);
-        } else {
-            return FreeMarkerTemplateFilesCreator.create(
-                    mappingContext, FreeMarkerTemplateType.TYPE, dataModel);
+              mappingContext, FreeMarkerTemplateType.INTERFACE, dataModel);
         }
+
+        return FreeMarkerTemplateFilesCreator.create(
+                mappingContext, FreeMarkerTemplateType.TYPE, dataModel);
     }
 }

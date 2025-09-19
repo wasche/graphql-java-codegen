@@ -81,6 +81,7 @@ public class GraphQLCodegenGradleTask extends DefaultTask implements GraphQLCode
     private String modelValidationAnnotation;
     private Boolean generateEqualsAndHashCode = MappingConfigConstants.DEFAULT_EQUALS_AND_HASHCODE;
     private Boolean generateImmutableModels = MappingConfigConstants.DEFAULT_GENERATE_IMMUTABLE_MODELS;
+    private Boolean useRecordTypes = MappingConfigConstants.DEFAULT_USE_RECORD_TYPES;
     private Boolean generateToString = MappingConfigConstants.DEFAULT_TO_STRING;
     private Boolean generateParameterizedFieldsResolvers = MappingConfigConstants.DEFAULT_GENERATE_PARAMETERIZED_FIELDS_RESOLVERS;
     private Boolean generateExtensionFieldsResolvers = MappingConfigConstants.DEFAULT_GENERATE_EXTENSION_FIELDS_RESOLVERS;
@@ -171,6 +172,7 @@ public class GraphQLCodegenGradleTask extends DefaultTask implements GraphQLCode
         mappingConfig.setModelValidationAnnotation(modelValidationAnnotation);
         mappingConfig.setGenerateEqualsAndHashCode(generateEqualsAndHashCode);
         mappingConfig.setGenerateImmutableModels(generateImmutableModels);
+        mappingConfig.setUseRecordTypes(useRecordTypes);
         mappingConfig.setGenerateToString(generateToString);
         mappingConfig.setUseOptionalForNullableReturnTypes(useOptionalForNullableReturnTypes);
         mappingConfig.setUseWrapperForNullableInputTypes(useWrapperForNullableInputTypes);

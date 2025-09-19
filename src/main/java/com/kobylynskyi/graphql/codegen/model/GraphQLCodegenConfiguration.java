@@ -213,6 +213,13 @@ public interface GraphQLCodegenConfiguration {
     Boolean getGenerateImmutableModels();
 
     /**
+     * Specifies whether generated model classes should be record types.
+     *
+     * @return <b>true</b> if generated model classes should be record types.
+     */
+    Boolean getUseRecordTypes();
+
+    /**
      * Specifies whether generated model classes should have toString method defined.
      *
      * @return <b>true</b> if generated model classes should have toString method defined.

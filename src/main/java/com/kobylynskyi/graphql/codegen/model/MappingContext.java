@@ -200,6 +200,11 @@ public class MappingContext implements GraphQLCodegenConfiguration {
     }
 
     @Override
+    public Boolean getUseRecordTypes() {
+        return config.getUseRecordTypes();
+    }
+
+    @Override
     public Boolean getGenerateToString() {
         return config.getGenerateToString();
     }

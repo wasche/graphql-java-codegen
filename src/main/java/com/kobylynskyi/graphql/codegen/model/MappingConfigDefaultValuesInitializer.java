@@ -41,6 +41,9 @@ public class MappingConfigDefaultValuesInitializer {
         if (mappingConfig.getGenerateImmutableModels() == null) {
             mappingConfig.setGenerateImmutableModels(MappingConfigConstants.DEFAULT_GENERATE_IMMUTABLE_MODELS);
         }
+        if (mappingConfig.getUseRecordTypes() == null) {
+            mappingConfig.setUseRecordTypes(MappingConfigConstants.DEFAULT_USE_RECORD_TYPES);
+        }
         if (mappingConfig.getGenerateToString() == null) {
             mappingConfig.setGenerateToString(MappingConfigConstants.DEFAULT_TO_STRING);
         }

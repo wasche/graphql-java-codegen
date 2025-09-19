@@ -23,6 +23,8 @@ public class MappingConfigConstants {
     public static final boolean DEFAULT_GENERATE_IMMUTABLE_MODELS = false;
     public static final String DEFAULT_GENERATE_IMMUTABLE_MODELS_STRING = "false";
 
+    public static final boolean DEFAULT_USE_RECORD_TYPES = false;
+
     public static final boolean DEFAULT_TO_STRING = false;
     public static final String DEFAULT_TO_STRING_STRING = "false";
 
